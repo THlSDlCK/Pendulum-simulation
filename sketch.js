@@ -17,7 +17,7 @@ let Period = 0;
 function setup() {
   createCanvas(800, 700);
   ball = createVector();
-  angle = 315;
+  angle = 345;
   buttonLengthUp = createButton("Length + 0.1m");
   buttonLengthUp.mousePressed(lengthUp);
   buttonLengthDown = createButton("Length - 0.1m");
@@ -34,7 +34,7 @@ function setup() {
   startButton.mousePressed(startPendulum);
   createP("Base gravity is 9.81m/s^2, base length is 0.5m. Amplitude is PI/4 radians");
   Period = 2 * PI * sqrt(lengthM / gravity);
-  angleMotion = PI / (2 * Period);
+  angleMotion = PI / (3 * Period);
 }
 
 function draw() {
@@ -88,10 +88,10 @@ function lengthDown() {
 }
 
 function changeDir() {
-  if (angle > 405) {
-    angleMotion = - PI / (2 * Period);
-  } else if (angle < 315) {
-    angleMotion =  PI / (2 * Period);
+  if (angle > 375) {
+    angleMotion = - PI / (3 * Period);
+  } else if (angle < 345) {
+    angleMotion =  PI / (3 * Period);
   }
 }
 
@@ -100,5 +100,5 @@ function pausePendulum(){
 }
 
 function startPendulum(){
-  angleMotion =  PI / (2 * Period);
+  angleMotion =  PI / (3 * Period);
 }
